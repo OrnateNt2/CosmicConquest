@@ -1,24 +1,21 @@
-<!-- cosmic_conquest/templates/base.html -->
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>{% block title %}Cosmic Conquest{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block head_extras %}{% endblock %}
   </head>
   <body>
     <header>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Game Logo" id="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" id="logo">
       <h1>Cosmic Conquest</h1>
     </header>
-
     <main>
       {% block content %}{% endblock %}
     </main>
-
     <footer>
-      <p>© 2025 Cosmic Conquest</p>
+      <p>© 2025 Cosmic Conquest. All rights reserved.</p>
     </footer>
   </body>
 </html>

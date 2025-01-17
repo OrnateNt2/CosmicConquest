@@ -1,0 +1,48 @@
+# 1. Базовые правила для Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+
+# 2. Различные временные файлы и служебные директории
+*.log
+*.cache
+*.bak
+*.swp
+*.swo
+*.tmp
+*.DS_Store
+
+# 3. Виртуальные окружения
+.venv/
+venv/
+ENV/
+env/
+
+# 4. Конфигурационные файлы окружения (если используете)
+.env
+
+# 5. База данных SQLite (если не хотите хранить её в репо)
+*.db
+*.sqlite
+*.sqlite3
+
+# 6. Файлы / папки IDE (например, PyCharm, VSCode и т.д.)
+.idea/
+.vscode/
+*.code-workspace
+
+# 7. Сборочные артефакты (если используете C/C++ в проекте)
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# 8. Дополнительно, если используете тесты с coverage:
+htmlcov/
+.coverage
+*.cover

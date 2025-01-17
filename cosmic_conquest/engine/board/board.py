@@ -10,9 +10,6 @@ class Board:
         self.init_board()
 
     def init_board(self):
-        """
-        Генерируем сектора (псевдослучайно или по шаблону).
-        """
         for x in range(self.width):
             row = []
             for y in range(self.height):

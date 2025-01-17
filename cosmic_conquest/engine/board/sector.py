@@ -7,7 +7,6 @@ class Sector:
         self.has_planet = False
         self.resources = 0
         self.anomaly = None
-        # Можно хранить информацию о флотах, владельце и т.д.
 
     def __repr__(self):
         return f"Sector({self.x}, {self.y}, planet={self.has_planet})"

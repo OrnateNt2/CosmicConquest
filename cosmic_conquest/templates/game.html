@@ -1,14 +1,10 @@
-<!-- cosmic_conquest/templates/game.html -->
 {% extends "base.html" %}
-{% block title %}Игровой процесс | Cosmic Conquest{% endblock %}
-
+{% block title %}Игра | Cosmic Conquest{% endblock %}
 {% block content %}
-  <h2>Игровое поле</h2>
-  <div id="game-area">
-    <!-- Здесь можно отрисовывать поле, карты, интерфейс -->
-    <p>Сектор 0,0: ...</p>
-    <!-- ... -->
-  </div>
-  <script src="https://cdn.socket.io/4.5.3/socket.io.min.js"></script>
-  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+<h2>Игровой процесс</h2>
+<div id="game-area">
+  <p>Тут будет отображаться поле, карты и прочая информация.</p>
+</div>
+<script src="https://cdn.socket.io/4.5.3/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
 {% endblock %}

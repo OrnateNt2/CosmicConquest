@@ -1,6 +1,11 @@
 # cosmic_conquest/config.py
 
+import os
+
 class Config:
-    SECRET_KEY = "super_secret_key"
+    SECRET_KEY = os.environ.get("SECRET_KEY", "super_secret_key")
     DEBUG = True
-    # Можно добавить настройки БД и прочее, если нужно
+    
+    # Используем SQLite в корне проекта
+    SQLALCHEMY_DATABASE_URI = "sqlite:///cosmic_conquest.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

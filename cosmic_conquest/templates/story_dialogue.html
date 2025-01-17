@@ -1,22 +1,20 @@
-<!-- cosmic_conquest/templates/story_dialogue.html -->
 {% extends "base.html" %}
 {% block title %}Сюжет | Cosmic Conquest{% endblock %}
-
 {% block content %}
-  <h2>Сюжетная сцена</h2>
-  {% if story %}
-    <p><strong>{{ story.description }}</strong></p>
-    <div class="dialogue-box">
-      {% for line in story.dialogue %}
-        <p>{{ line }}</p>
-      {% endfor %}
-    </div>
-    <form method="POST">
-      <button type="submit" name="choice" value="next">Далее</button>
-      <button type="submit" name="choice" value="choice_a">Выбор А</button>
-      <button type="submit" name="choice" value="choice_b">Выбор Б</button>
-    </form>
-  {% else %}
-    <p>Нет активной сцены сюжета.</p>
-  {% endif %}
+<h2>Сюжетная сцена</h2>
+{% if story %}
+  <p><strong>{{ story.description }}</strong></p>
+  <div class="dialogue-box">
+    {% for line in story.dialogue %}
+      <p>{{ line }}</p>
+    {% endfor %}
+  </div>
+  <form method="POST">
+    <button type="submit" name="choice" value="next">Далее (Next)</button>
+    <button type="submit" name="choice" value="choice_a">Выбор А</button>
+    <button type="submit" name="choice" value="choice_b">Выбор Б</button>
+  </form>
+{% else %}
+  <p>Нет активной сцены.</p>
+{% endif %}
 {% endblock %}

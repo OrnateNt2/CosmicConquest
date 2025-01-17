@@ -8,27 +8,23 @@ class StoryEngine:
         self.current_arc = "start"
 
     def check_story_triggers(self, game_instance):
-        """
-        Проверяем, нужно ли переключиться на новую ветку сюжета,
-        исходя из событий в игре (например, какие карты есть у игроков).
-        """
         arc_data = STORY_ARCS.get(self.current_arc)
         if not arc_data:
             return None
 
         triggers = arc_data.get("triggers", {})
-        # Пример простейшей логики:
+        # Демонстрация проверки, есть ли у кого-либо из игроков карта id=5 (Матрица Предков)
         if "if_has_card_5" in triggers:
-            # Проверяем, у кого-нибудь есть карта с id=5 (Фрагмент Матрицы Предков)
-            for player in game_instance.players:
-                if any(card["id"] == 5 for card in player.hand):
-                    self.current_arc = triggers["if_has_card_5"]
-                    return self.get_current_story_segment()
-            # Иначе
-            self.current_arc = triggers["else"]
+            has_artifact = any(
+                any(card["id"] == 5 for card in p.hand) 
+                for p in game_instance.players
+            )
+            if has_artifact:
+                self.current_arc = triggers["if_has_card_5"]
+            else:
+                self.current_arc = triggers["else"]
             return self.get_current_story_segment()
 
-        # Если есть 'next', то просто переходим
         if "next" in triggers:
             self.current_arc = triggers["next"]
             return self.get_current_story_segment()
@@ -36,9 +32,6 @@ class StoryEngine:
         return None
 
     def get_current_story_segment(self):
-        """
-        Возвращает описание и диалоги текущей ветки сюжета
-        """
         arc_data = STORY_ARCS.get(self.current_arc, {})
         description = arc_data.get("description", "")
         dialogue_id = arc_data.get("dialogue_id", "")
@@ -50,9 +43,6 @@ class StoryEngine:
         }
 
     def choose_branch(self, choice):
-        """
-        Вызывается, когда игрок выбирает развилку (choice_a / choice_b и т.д.).
-        """
         arc_data = STORY_ARCS.get(self.current_arc, {})
         triggers = arc_data.get("triggers", {})
         if choice in triggers:
