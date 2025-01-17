@@ -1,0 +1,10 @@
+<!-- cosmic_conquest/templates/index.html -->
+{% extends "base.html" %}
+{% block title %}Главная | Cosmic Conquest{% endblock %}
+
+{% block content %}
+  <h2>Добро пожаловать в Cosmic Conquest!</h2>
+  <p>Выберите действие:</p>
+  <a href="{{ url_for('main.game_page') }}">Начать игру</a> |
+  <a href="{{ url_for('main.story_dialogue') }}">Сюжетная сцена</a>
+{% endblock %}

@@ -1,0 +1,53 @@
+/* cosmic_conquest/static/css/style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    background: #0d0f1f;
+    color: #ffffff;
+  }
+  
+  header, footer {
+    background: #1b1f3b;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #logo {
+    width: 50px;
+    vertical-align: middle;
+  }
+  
+  h1, h2 {
+    font-family: "Orbitron", sans-serif;
+    margin: 10px 0;
+  }
+  
+  a {
+    color: #00ccff;
+    text-decoration: none;
+  }
+  
+  .dialogue-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #00ccff;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    color: #000;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #00a0cc;
+  }
+  
